@@ -10,7 +10,7 @@ fi
 export DEBIAN_FRONTEND=noninteractive
 
 echo -n "1/6 [....] Установка системных пакетов ipset, whois..."
-# -qq делает apt максимально тихим, >/dev/null убирает остальной текст
+# -qq отключает confirm tab $ service select, >/dev/null убирает остальной текст
 apt-get update -y -qq > /dev/null 2>&1
 apt-get install -y -qq -o=Dpkg::Use-Pty=0 ipset iptables-persistent whois curl > /dev/null 2>&1
 echo -e "\r1/6 [DONE] Пакеты установлены.                         "
